@@ -13,13 +13,10 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   container: {
-    height: '95%',
+    height: '100%',
   },
-  left: {
-    textAlign: 'left'
-  },
-  right: {
-    textAlign: 'right'
+  header: {
+    textAlign: 'center'
   },
   media: {
     height: 150,
@@ -30,6 +27,8 @@ const styleOptions = {
   bubbleBackground: '#5A9BD5',
   bubbleFromUserBackground: '#88efa0',
   botAvatarInitials: 'CV',
+  botAvatarImage: logo,
+  hideUploadButton: true,
 };
 
 function App() {
@@ -52,17 +51,12 @@ function App() {
 
   return <div className={classes.root}>
     <Grid className={classes.container} container spacing={1}>
-      <Grid item xs={6}>
-        <Card className={classes.left}>
-          <img src={logo} alt={'Covi-Bot'} className={classes.media} />
-        </Card>
-      </Grid>
-      <Grid item xs={6}>
-        <Card className={classes.right}>
+      <Grid item xs={12}>
+        <Card className={classes.header}>
           <img src={hackathon} alt={'Wir vs. Virus Hackathon'} className={classes.media} />
         </Card>
       </Grid>
-      <Grid item xs={12}>
+      <Grid id={'chat'} item xs={12}>
         <ReactWebChat directLine={directLine} store={store} styleOptions={styleOptions} />
       </Grid>
     </Grid>
