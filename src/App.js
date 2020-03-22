@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import ReactWebChat, { createDirectLine, createStore } from 'botframework-webchat';
+import React, { useMemo } from 'react';
+
+// import logo from './logo.svg';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const directLine = useMemo(() => createDirectLine({ token: window.secret }), []);
+  const store = createStore({}, ({ dispatch }) => next => action => {
+    if (action.type === 'DIRECT_LINE/CONNECT_FULFILLED') {
+      dispatch({
+        type: 'WEB_CHAT/SEND_EVENT',
+        payload: {
+          name: 'webchat/join',
+          value: { language: window.navigator.language }
+        }
+      });
+    }
+    return next(action);
+  });
+
+  return <ReactWebChat directLine={directLine} store={store} />;
 }
 
 export default App;
