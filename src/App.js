@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Card, Grid, Typography } from '@material-ui/core';
+import { Card, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactWebChat, { createDirectLine, createStore } from 'botframework-webchat';
 import React, { useMemo } from 'react';
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center'
   },
   media: {
-    height: 100,
+    height: 97,
   }
 }));
 
