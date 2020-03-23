@@ -16,6 +16,10 @@ html, body {
   overflow-y: auto;
 }
 
+.webchat__bubble__content {
+  border-radius: 8px!important;
+}
+
 .App {
   text-align: center;
 }

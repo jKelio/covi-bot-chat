@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const styleOptions = {
-  bubbleBackground: '#5A9BD5',
-  bubbleFromUserBackground: '#88efa0',
+  bubbleBackground: 'lightblue',
+  bubbleFromUserBackground: 'lightgreen',
   botAvatarInitials: 'CV',
   botAvatarImage: logo,
   hideUploadButton: true,
