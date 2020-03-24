@@ -18,6 +18,7 @@ html, body {
 
 .webchat__bubble__content {
   border-radius: 8px!important;
+  line-height: 1.2em!important;
 }
 
 .App {
