@@ -39,7 +39,7 @@ fetch('https://covionestopbot.azurewebsites.net/api/environment').then((response
       <App />
       <ReactWebChat directLine={createDirectLine({
         token: data.directLineSecret
-      })} store={store} sendTypingIndicator={true} styleOptions={styleOptions} />
+      })} store={store} styleOptions={styleOptions} />
     </React.StrictMode>,
     document.getElementById('root')
   );
